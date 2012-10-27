@@ -1,0 +1,5 @@
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyView\obj\Debug\PropertyView.csprojResolveAssemblyReference.cache
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyView\bin\Debug\PropertyView.dll
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyView\bin\Debug\PropertyView.pdb
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyView\obj\Debug\PropertyView.dll
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyView\obj\Debug\PropertyView.pdb
