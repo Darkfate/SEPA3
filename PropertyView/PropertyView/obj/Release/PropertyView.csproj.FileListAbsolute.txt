@@ -1,0 +1,4 @@
+C:\Users\Nguyen Dang Khoa\Desktop\SEP\SEPA3\PropertyView\PropertyView\bin\Release\PropertyView.dll
+C:\Users\Nguyen Dang Khoa\Desktop\SEP\SEPA3\PropertyView\PropertyView\bin\Release\PropertyView.pdb
+C:\Users\Nguyen Dang Khoa\Desktop\SEP\SEPA3\PropertyView\PropertyView\obj\Release\PropertyView.dll
+C:\Users\Nguyen Dang Khoa\Desktop\SEP\SEPA3\PropertyView\PropertyView\obj\Release\PropertyView.pdb
