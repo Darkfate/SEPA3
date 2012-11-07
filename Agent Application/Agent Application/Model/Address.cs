@@ -35,6 +35,8 @@ namespace Agent_Application.Model
             return s;
         }
 
+        
+
         public String StreetNo()
         {
             return streetNo;
