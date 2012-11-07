@@ -5,7 +5,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
 
-namespace Agent_Application
+namespace PropertyView
 {
     public class DataConnection
     {

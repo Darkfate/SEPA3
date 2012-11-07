@@ -46,6 +46,9 @@ namespace Agent_Application
             postCodeText.Text = selection.Address().PostCode();
             stateText.Text = selection.Address().State();
             countryText.Text = selection.Address().Country();
+            agentIdText.Text = selection.AgentId() + "";
+            propertyTypeText.Text = selection.PropertyType();
+            costText.Text = selection.Cost() + "";
         }
 
         private void propertyBox_SelectedIndexChanged(object sender, EventArgs e)

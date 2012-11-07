@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Agent_Application
 {
@@ -14,7 +15,16 @@ namespace Agent_Application
         public DataTable ExecuteQuery(String sSQL)
         {
             MySqlConnection conn = new MySqlConnection(connectionString);
-            conn.Open();
+            try
+            {
+                conn.Open();
+            }
+            catch
+            {
+                String message = "Error: Remote Database unavailable - perhaps it is down or your network connection does not allow remote connections";
+                String caption = "Connectivity Error";
+                MessageBox.Show(message, caption);
+            }
             MySqlCommand cmd = new MySqlCommand();
             cmd.CommandText = sSQL;
             cmd.Connection = conn;
