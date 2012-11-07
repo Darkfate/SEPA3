@@ -23,5 +23,10 @@ namespace PropertyView
             this.State = state;
             this.Country = country;
         }
+
+        public string fullAddress()
+        {
+            return string.Format("{0} {1}, {2} {3} {4} {5}", StreetNo, StreetName, Suburb, PostCode, State, Country);
+        }
     }
 }

@@ -44,10 +44,20 @@ namespace PropertyView
             }
         }
 
-        public Property[] search(string keyword)
+        public List<Property> search(string keyword)
         {
             // istead of this, it might want to call a method that talks to the database and filter it from there.
-                return properties.Where(property => property.Address.StreetName.Contains(keyword)).ToArray();
+            Func<string, bool> keywordContains = s => s.ToLower().Contains(keyword.ToLower());
+
+            Func<Property, bool> searchForKeyword = 
+                property => 
+                    keywordContains(property.Address.StreetName) ||
+                    keywordContains(property.Address.Suburb) ||
+                    keywordContains(property.Address.PostCode.ToString()) ||
+                    keywordContains(property.Address.Country) ||
+                    keywordContains(property.Address.State);
+
+            return properties.Where(searchForKeyword).ToList();
         }
 
         public void sort()

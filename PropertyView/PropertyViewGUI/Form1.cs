@@ -14,18 +14,25 @@ namespace PropertyViewGUI
     public partial class CatalogView : Form
     {
         private Catalog catalog;
-        private List<Property> propertyList;
 
         public CatalogView()
         {
             InitializeComponent();
             catalog = new Catalog();
-            propertyList = new List<Property>();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            propertyList = catalog.search(textBox1.Text).ToList();
+            textBox2.Text = string.Empty;
+
+            catalog.
+            search(textBox1.Text).
+            ToList().
+            ForEach(
+                prop => 
+                    textBox2.Text = textBox2.Text + prop.Address.fullAddress() + Environment.NewLine);
+
+
         }
     }
 }
