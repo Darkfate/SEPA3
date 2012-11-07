@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="DataConnection.cs" />
     <Compile Include="Properties.cs" />
