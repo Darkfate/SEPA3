@@ -1,0 +1,12 @@
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\PropertyViewGUI.exe.config
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\PropertyViewGUI.exe
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\PropertyViewGUI.pdb
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\PropertyView.dll
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\MySql.Data.dll
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\bin\Debug\PropertyView.pdb
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.csprojResolveAssemblyReference.cache
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.CatalogView.resources
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.Properties.Resources.resources
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.csproj.GenerateResource.Cache
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.exe
+C:\Users\denis\Documents\GitHub\SEPA3\PropertyView\PropertyViewGUI\obj\Debug\PropertyViewGUI.pdb
