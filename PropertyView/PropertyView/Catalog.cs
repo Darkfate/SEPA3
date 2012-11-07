@@ -55,7 +55,7 @@ namespace PropertyView
                     keywordContains(property.Address.Suburb) ||
                     keywordContains(property.Address.PostCode.ToString()) ||
                     keywordContains(property.Address.Country) ||
-                    keywordContains(property.Address.State);
+                    keywordContains(property.Address.State); ;
 
             return properties.Where(searchForKeyword).ToList();
         }
