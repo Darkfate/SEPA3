@@ -30,7 +30,7 @@ namespace Agent_Application
 
         private void updateList()
         {
-            propertyBox.DataSource = null;
+            propertyBox.Enabled = true;
             List<Property> properties = agency.getProperties();
             propertyBox.DataSource = properties;
             propertyBox.DisplayMember = "AddressText";
@@ -49,6 +49,10 @@ namespace Agent_Application
             agentIdText.Text = selection.AgentId() + "";
             propertyTypeText.Text = selection.PropertyType();
             costText.Text = selection.Cost() + "";
+            List<Asset> assets = selection.Assets().AssetList();
+            assetBox.DataSource = assets;
+            assetBox.DisplayMember = "AssetName"; 
+            assetBox.Visible = true;
         }
 
         private void propertyBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -56,5 +60,53 @@ namespace Agent_Application
             updateFields();
         }
 
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            saveButton.Show();
+            cancelButton.Show();
+            propertyBox.Enabled = false;
+            clearForm();
+        }
+
+        private void clearForm()
+        {
+            streetNoText.Text = "";
+            streetNameText.Text = "";
+            suburbText.Text = "";
+            postCodeText.Text = "";
+            stateText.Text = "";
+            countryText.Text = "";
+            agentIdText.Text = "";
+            propertyTypeText.Text = "";
+            costText.Text = "";
+            assetBox.Visible = false;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            updateList();
+            updateFields();
+            saveButton.Hide();
+            cancelButton.Hide();
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            String streetNo = streetNoText.Text;
+            String streetName = streetNameText.Text;
+            String suburb = suburbText.Text;
+            String postCode = postCodeText.Text;
+            String state = stateText.Text;
+            String country = countryText.Text;
+            Address address = new Address(streetNo, streetName, suburb, postCode, state, country);
+            String agentId = agentIdText.Text;
+            String propertyType = propertyTypeText.Text;
+            String cost = costText.Text;
+            String[] details = {propertyType, cost, agentId };
+            agency.addProperty(address, details);
+            updateList();
+            saveButton.Hide();
+            cancelButton.Hide();
+        }
     }
 }

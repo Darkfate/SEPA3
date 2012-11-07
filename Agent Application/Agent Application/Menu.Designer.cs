@@ -30,7 +30,10 @@
         {
             this.tabWindow = new System.Windows.Forms.TabControl();
             this.PropertyManagement = new System.Windows.Forms.TabPage();
-            this.debug = new System.Windows.Forms.Label();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.label11 = new System.Windows.Forms.Label();
+            this.assetBox = new System.Windows.Forms.ListBox();
             this.agentIdText = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.costText = new System.Windows.Forms.TextBox();
@@ -49,8 +52,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.streetNoText = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.propertyBox = new System.Windows.Forms.ListBox();
             this.AssetsManagement = new System.Windows.Forms.TabPage();
@@ -70,7 +73,10 @@
             // 
             // PropertyManagement
             // 
-            this.PropertyManagement.Controls.Add(this.debug);
+            this.PropertyManagement.Controls.Add(this.cancelButton);
+            this.PropertyManagement.Controls.Add(this.saveButton);
+            this.PropertyManagement.Controls.Add(this.label11);
+            this.PropertyManagement.Controls.Add(this.assetBox);
             this.PropertyManagement.Controls.Add(this.agentIdText);
             this.PropertyManagement.Controls.Add(this.label10);
             this.PropertyManagement.Controls.Add(this.costText);
@@ -89,8 +95,8 @@
             this.PropertyManagement.Controls.Add(this.label3);
             this.PropertyManagement.Controls.Add(this.label2);
             this.PropertyManagement.Controls.Add(this.streetNoText);
-            this.PropertyManagement.Controls.Add(this.button2);
-            this.PropertyManagement.Controls.Add(this.button1);
+            this.PropertyManagement.Controls.Add(this.deleteButton);
+            this.PropertyManagement.Controls.Add(this.addButton);
             this.PropertyManagement.Controls.Add(this.label1);
             this.PropertyManagement.Controls.Add(this.propertyBox);
             this.PropertyManagement.Location = new System.Drawing.Point(4, 22);
@@ -101,14 +107,45 @@
             this.PropertyManagement.Text = "Property Management";
             this.PropertyManagement.UseVisualStyleBackColor = true;
             // 
-            // debug
+            // cancelButton
             // 
-            this.debug.AutoSize = true;
-            this.debug.Location = new System.Drawing.Point(222, 448);
-            this.debug.Name = "debug";
-            this.debug.Size = new System.Drawing.Size(41, 13);
-            this.debug.TabIndex = 22;
-            this.debug.Text = "label11";
+            this.cancelButton.Location = new System.Drawing.Point(338, 455);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 26;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Visible = false;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(237, 455);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 25;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Visible = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(504, 258);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Property Assets";
+            // 
+            // assetBox
+            // 
+            this.assetBox.FormattingEnabled = true;
+            this.assetBox.Location = new System.Drawing.Point(507, 274);
+            this.assetBox.Name = "assetBox";
+            this.assetBox.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.assetBox.Size = new System.Drawing.Size(165, 225);
+            this.assetBox.TabIndex = 23;
             // 
             // agentIdText
             // 
@@ -254,23 +291,24 @@
             this.streetNoText.Size = new System.Drawing.Size(72, 20);
             this.streetNoText.TabIndex = 4;
             // 
-            // button2
+            // deleteButton
             // 
-            this.button2.Location = new System.Drawing.Point(108, 491);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.deleteButton.Location = new System.Drawing.Point(108, 491);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(75, 23);
+            this.deleteButton.TabIndex = 3;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // addButton
             // 
-            this.button1.Location = new System.Drawing.Point(6, 491);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.addButton.Location = new System.Drawing.Point(6, 491);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 2;
+            this.addButton.Text = "Add";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // label1
             // 
@@ -341,9 +379,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox streetNoText;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label debug;
+        private System.Windows.Forms.Button deleteButton;
+        private System.Windows.Forms.Button addButton;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ListBox assetBox;
+        private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
 

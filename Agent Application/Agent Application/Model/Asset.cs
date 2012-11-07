@@ -14,5 +14,13 @@ namespace Agent_Application.Model
         {
             this.assetName = assetName;
         }
+
+        public String AssetName
+        {
+            get
+            {
+                return assetName;
+            }
+        }
     }
 }

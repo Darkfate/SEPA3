@@ -11,10 +11,11 @@ namespace Agent_Application.Model
     class Propertys
     {
         private List<Property> propertyList = new List<Property>();
-        private DataConnection dc = new DataConnection();
+        private DataConnection dc;
 
-        public Propertys()
+        public Propertys(DataConnection dc)
         {
+            this.dc = dc;
             fillList();
         }
 
@@ -31,7 +32,7 @@ namespace Agent_Application.Model
                 DataTable address = dc.ExecuteQuery("select StreetNumber, StreetName, Suburb, PostCode, State, Country from Address where PropertyID = " + propertyId + ";");
                 if (address.Rows.Count > 0)
                 {
-                    int streetNo = Convert.ToInt32(address.Rows[0].ItemArray[0].ToString());
+                    String streetNo = address.Rows[0].ItemArray[0].ToString();
                     String streetName = address.Rows[0].ItemArray[1].ToString();
                     String suburb = address.Rows[0].ItemArray[2].ToString();
                     String postCode = address.Rows[0].ItemArray[3].ToString();
@@ -47,5 +48,19 @@ namespace Agent_Application.Model
             return propertyList;
         }
 
+        public void refresh(){
+            propertyList = null;
+            propertyList = new List<Property>();
+            fillList();
+        }
+
+        public void addProperty(Address address, String[] details)
+        {
+            dc.ExecuteNonQuery("insert into Property(PropertyType, Cost, Available, AgentID) values ('" + details[0] + "', " + details[1] + ", 1, " + details[2] + ");");
+            DataTable idResult =  dc.ExecuteQuery("select PropertyID from Property where AgentId = " + details[2] + " ORDER BY PropertyID DESC;");
+            String id = idResult.Rows[0].ItemArray[0].ToString();
+            dc.ExecuteNonQuery("insert into Address values (" + id + ", " + address.StreetNo() + ", '" + address.StreetName() + "', '" + address.Suburb() + "', " + address.PostCode() + ", '" + address.State() + "', '" + address.Country() + "');");
+            refresh();
+        }
     }
 }

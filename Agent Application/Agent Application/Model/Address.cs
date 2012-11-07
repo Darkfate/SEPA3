@@ -8,14 +8,14 @@ namespace Agent_Application.Model
 {
     class Address
     {
-        private int streetNo;
+        private String streetNo;
         private String streetName;
         private String suburb;
         private String postCode;
         private String state;
         private String country;
 
-        public Address(int streetNo, String streetName, String suburb, String postCode, String state, String country)
+        public Address(String streetNo, String streetName, String suburb, String postCode, String state, String country)
         {
             this.streetNo = streetNo;
             this.streetName = streetName;
@@ -35,7 +35,7 @@ namespace Agent_Application.Model
             return s;
         }
 
-        public int StreetNo()
+        public String StreetNo()
         {
             return streetNo;
         }

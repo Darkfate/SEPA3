@@ -8,11 +8,22 @@ namespace Agent_Application.Model
 {
     class Agency
     {
-        private Propertys propertys = new Propertys();
+        private DataConnection dc = new DataConnection();
+        private Propertys propertys;
+
+        public Agency()
+        {
+            propertys = new Propertys(dc);
+        }
 
         public List<Property> getProperties()
         {
             return propertys.getProperties();
+        }
+
+        public void addProperty(Address address, String[] propertyDetails)
+        {
+            propertys.addProperty(address, propertyDetails); 
         }
     }
 }

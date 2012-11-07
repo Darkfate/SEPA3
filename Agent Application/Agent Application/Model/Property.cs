@@ -14,8 +14,9 @@ namespace Agent_Application.Model
         private String propertyType;
         private int available;
         private Address address;
+        private Assets assets;
 
-        public Property(int propertyId, String propertyType, int cost, int available, int agentId, int streetNo, String streetName, String suburb, String postCode, String state, String country)
+        public Property(int propertyId, String propertyType, int cost, int available, int agentId, String streetNo, String streetName, String suburb, String postCode, String state, String country)
         {
             this.propertyId = propertyId;
             this.propertyType = propertyType;
@@ -23,6 +24,7 @@ namespace Agent_Application.Model
             this.agentId = agentId;
             this.available = available;
             this.address = new Address(streetNo, streetName, suburb, postCode, state, country);
+            this.assets = new Assets(propertyId);
         }
 
         public String AddressText
@@ -69,6 +71,11 @@ namespace Agent_Application.Model
         public Address Address()
         {
             return address;
+        }
+
+        public Assets Assets()
+        {
+            return assets;
         }
     }
 }
