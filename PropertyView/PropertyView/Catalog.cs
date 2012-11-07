@@ -10,14 +10,21 @@ namespace PropertyView
     {
         private Property[] properties;
 
+        public Catalog()
+        {
+            //initialise properties here. With our current design it seems like we want properties will contain everything from the database at initiation
+        }
+
         public Property[] search(string keyword)
         {
-            throw new NotImplementedException();
+            // istead of this, it might want to call a method that talks to the database and filter it from there.
+            return properties.Where(property => property.getPropertyName().Contains(keyword)).ToArray();
         }
 
         public void sort()
         {
-            throw new NotImplementedException();
+            // MIght add another method to order by ID aswell. ALso like above, ordering might be better done in the database.
+            properties.OrderBy(property => property.getPropertyName());
         }
 
         public void addProperty()
