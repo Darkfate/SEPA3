@@ -18,6 +18,7 @@ namespace PropertyView
             this.propertyAddress = propertyAddress;
 
         }
+
         public Video getVideo()
         {
             throw new NotImplementedException();

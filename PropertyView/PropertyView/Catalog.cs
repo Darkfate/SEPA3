@@ -19,6 +19,7 @@ namespace PropertyView
         {
             throw new NotImplementedException();
         }
+
         public void addProperty()
         {
             Console.WriteLine("Please enter Property Name");
@@ -31,6 +32,7 @@ namespace PropertyView
 
 
         }
+
         public void displayProperty()
         {
             for(int i=0;i<properties.Length; i++)
